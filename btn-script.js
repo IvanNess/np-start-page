@@ -1,8 +1,6 @@
-document.addEventListener('DOMContentLoaded', ()=>{
+if(document.documentElement.clientWidth < 600){
 
-    if(document.documentElement.clientWidth > 600){
-        return
-    }
+    const $body = document.querySelector('body')
 
     const createBtn = (title, link )=>{
         const $btn = document.createElement('div');
@@ -28,16 +26,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
     $btnDiv.style.flexDirection = 'row';
     $btnDiv.style.justifyContent = 'center'
     $btnDiv.style.zIndex = 1000;
-
-    const $header = document.querySelector('#header')
-    const headerHeight = $header.getBoundingClientRect().bottom - $header.getBoundingClientRect().top
-    console.log(headerHeight)
     $btnDiv.style.position ='absolute'
-    $btnDiv.style.left ='25%'
-    $btnDiv.style.top =`${headerHeight-40}px`
-
+    $btnDiv.style.left ='28%'
+    $btnDiv.style.top =`70px`
 
     $btnDiv.appendChild($btnVacancies);
     $btnDiv.appendChild($btnAds);
-    $header.appendChild($btnDiv);
-})
+    $body.appendChild($btnDiv);
+
+}

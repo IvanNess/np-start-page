@@ -19,21 +19,6 @@ window.onload = ()=>{
     $adDiv.style.transitionDuration = '0.5s';
     $adDiv.style.overflow = 'hidden';
 
-    document.body.addEventListener("touchstart", (e)=>{
-        e.preventDefault()
-        document.body.style.height = '100vh';
-        document.body.style.overflow = 'hidden';
-        $adDiv.style.left = 0;
-    }, {once: true})
-
-    const $ad = document.querySelectorAll("section.container-wrap.main-color");
-    const $clone0 = $ad[1].cloneNode(true)
-    const $clone1 = $ad[1].cloneNode(true)//4
-    $adDiv.appendChild($clone0)
-    $adDiv.appendChild($clone1)
-
-    document.body.appendChild($adDiv);
-
     const $close = document.createElement("div")
     $close.style.width = "5rem"
     $close.style.height = "5rem"
@@ -58,6 +43,23 @@ window.onload = ()=>{
     }
 
     $close.addEventListener('click', closeAd)
+
+
+    document.body.addEventListener("touchstart", (e)=>{
+        e.preventDefault()
+        document.body.style.height = '100vh';
+        document.body.style.overflow = 'hidden';
+        $adDiv.style.left = 0;
+        $close.scrollIntoView(true)
+    }, {once: true})
+
+    const $ad = document.querySelectorAll("section.container-wrap.main-color");
+    const $clone0 = $ad[1].cloneNode(true)
+    const $clone1 = $ad[1].cloneNode(true)//4
+    $adDiv.appendChild($clone0)
+    $adDiv.appendChild($clone1)
+
+    document.body.appendChild($adDiv);
 
     $adDiv.appendChild($close)
 
