@@ -3685,7 +3685,7 @@ var buddyformsGlobal = {"admin_url":"https:\/\/nashapolsha.pl\/wp-admin\/admin-a
     const headerHeight = $header.getBoundingClientRect().bottom - $header.getBoundingClientRect().top
     console.log(headerHeight)
     $btnDiv.style.position ='absolute'
-    $btnDiv.style.left ='40%'
+    $btnDiv.style.left ='25%'
     $btnDiv.style.top =`${headerHeight-40}px`
 
 
@@ -3714,6 +3714,7 @@ var buddyformsGlobal = {"admin_url":"https:\/\/nashapolsha.pl\/wp-admin\/admin-a
     $adDiv.style.alignItems = 'center';
     $adDiv.style.justifyContent = 'center';
     $adDiv.style.transitionDuration = '0.5s';
+    $adDiv.style.overflow = 'hidden';
 
     document.body.addEventListener("click", (e)=>{
         e.preventDefault()
